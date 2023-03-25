@@ -1,11 +1,91 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 
-<body>
-  <%- include("./partials/nav.ejs") %>
 
+<body>
+  <div class="header">
+    <%- include("./partials/nav.ejs") %>
+  </div>
+  <style>
+      body {
+        max-width: 2500px;
+        margin: 0px auto;
+        padding: 0px;
+        font-family: 'Noto Serif', serif;
+        background-color: #0dcf9b;
+      }
+      .header {
+        background-color: #823636;
+        max-height: 100px;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4mm ridge rgba(125, 50, 39, 0.6);
+      }
+      h4{
+        margin-left: 15px;
+        padding: 0;
+        text-decoration: none;
+        color: #1129ff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-bottom: 40px;
+        font-size: 39px;  
+      }
+      p{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: #000000;
+        font-size: 18px;
+      }
+      .container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .blog-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .blog-item {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .blog-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .blog-content {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .read-more {
+        display: block;
+        text-align: right;
+        font-size: 15px;
+        color: #01239c;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      .read-more:hover {
+        text-decoration: underline;
+      }
+      .delete{
+      position:relative;
+      top: 0;
+      right: 0;
+      border-radius: 50%;
+      margin-top: 20px;
+      padding: 8px;
+    }
+    .delete:hover{
+      cursor: pointer;
+      box-shadow: 1px 2px 3px rgba(0,0,0,0.4);
+    }
+    </style>
   <div class="details content">
-    <h2><%= blog.title %></h2>
+    <h4><%= blog.title %></h4>
     <div class="content">
       <p><%= blog.body %></p>
     </div>
