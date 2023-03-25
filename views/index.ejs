@@ -1,4 +1,4 @@
-<html lang="en">
+<!-- <html lang="en">
 <%- include("./partials/head.ejs") %>
 
 <body>
@@ -22,4 +22,81 @@
 
   <%- include("./partials/footer.ejs") %>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <style>
+      body {
+        max-width: 2500px;
+        margin: 0px auto;
+        padding: 0px;
+        font-family: 'Noto Serif', serif;
+        background-color: #0dcf9b;
+      }
+      .header {
+        background-color: #823636;
+        max-height: 100px;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4mm ridge rgba(125, 50, 39, 0.6);
+      }
+      .container {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .blog-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .blog-item {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .blog-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .blog-content {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .read-more {
+        display: block;
+        text-align: right;
+        font-size: 15px;
+        color: #01239c;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      .read-more:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <div class="header">
+      <%- include("./partials/nav.ejs") %>
+    </div>
+    <div class="container">
+      <ul class="blog-list">
+      <% if (blogs.length > 0) { %>
+        <% blogs.forEach(blog => { %>
+          <li class="blog-item">
+            <h2 class="blog-title"><%= blog.title %></h2>
+            <p class="blog-content"><%= blog.snippet %></p>
+            <a class="read-more" href="/blogs/<%= blog._id %>">Read More</a>
+            <hr>
+          </li>
+        <% }); %>
+        <% } else { %>
+          <p>There are no blogs to display...</p>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+  <%- include("./partials/footer.ejs") %>
 </html>
