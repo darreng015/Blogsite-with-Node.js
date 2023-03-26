@@ -1,9 +1,26 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
-
-<body>
+<div class="header">
   <%- include("./partials/nav.ejs") %>
-
+</div>
+<body>
+  <style>
+    body {
+      max-width: 2500px;
+      margin: 0px auto;
+      padding: 0px;
+      font-family: 'Noto Serif', serif;
+      background-color: #0dcf9b;
+    }
+    .header {
+      background-color: #823636;
+      max-height: 100px;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4mm ridge rgba(125, 50, 39, 0.6);
+    }
+  </style>
   <div class="create-blog content">
     <form action="/blogs" method="post">
       <label for="title">Blog title:</label>
