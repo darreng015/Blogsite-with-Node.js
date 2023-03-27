@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const blogsRoutes = require('./Routes/blogsRoutes');
 
 //connecting to db
-const dbURL= 'mongodb+srv://darren2060i:darren123@nodetuts.fbhhzea.mongodb.net/node-tuts?retryWrites=true&w=majority';
+const dbURL= '';
 mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
