@@ -1,7 +1,9 @@
 const express = require('express')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+let fs = require('fs');
 const blogsRoutes = require('./Routes/blogsRoutes');
+const { Stream } = require('stream');
 
 //connecting to db
 const dbURL= '';
@@ -19,7 +21,7 @@ app.set('view engine', 'ejs');
 // middleware and static files
 app.use(express.static('public'));
 app.use(express.urlencoded());
-app.use(morgan('dev'));
+app.use(morgan('common', {stream:fs.createWriteStream('./app.log')}));
 
 app.get('/', (req, res) => {
     res.redirect('/blogs');
